@@ -1,5 +1,3 @@
-
-
 // import DesktopSidebar from './component/DesktopSidebar';
 // import MobileTopHeader from './component/MobileTopHeader';
 // import MobileBottomNav from './component/MobileBottomNav';
@@ -22,13 +20,13 @@
 
 //         {/* Main content area */}
 //         <main className="flex-1 pt-14 md:pt-0 pb-16 md:pb-0 overflow-y-auto">
-          
+
 //           {/* Stories horizontal scroll */}
 //           <StoriesRow />
 
 //           {/* Feed + Right suggestions container */}
 //           <div className="flex max-w-5xl mx-auto gap-8 px-4 md:px-0">
-            
+
 //             {/* Center feed - posts */}
 //             <div className="flex-1 py-6 max-w-xl">
 //               {/* You can map real posts array here later */}
@@ -56,7 +54,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./component/layout.jsx";
+import Layout from "./component/Layoutoutlet.jsx";
 import ReelPage from "./component/ReelPage.jsx";
 import PostCard from "./component/PostCard.jsx";
 import ProfilePage from "./component/ProfilePage.jsx";
@@ -68,9 +66,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<PostCard />} />
-        <Route path="/reels" element={<ReelPage/>} />
-        <Route path="/profile" element={<ProfilePage/>} />
-       
+          <Route path="/reels" element={<ReelPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

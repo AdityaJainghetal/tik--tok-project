@@ -7,7 +7,7 @@ import MobileBottomNav from "./MobileBottomNav";
 import StoriesRow from "./StoriesRow";
 import RightSuggestions from "./RightSuggestions";
 
-const Layout = () => {
+const Layoutoutlet = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white flex">
 
@@ -46,4 +46,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Layoutoutlet;
