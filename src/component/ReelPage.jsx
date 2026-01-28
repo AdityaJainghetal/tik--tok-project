@@ -1,126 +1,950 @@
 
-import { Heart, MessageCircle, Send, Bookmark, X } from "lucide-react";
+
+// // import { useState, useRef, useEffect } from "react";
+// // import {
+// //   Heart,
+// //   MessageCircle,
+// //   Send,
+// //   Bookmark,
+// //   X,
+// //   ThumbsDown,
+// // } from "lucide-react";
+// // import { useNavigate } from "react-router-dom";
+
+// // const dummyReels = [
+// //   {
+// //     id: 1,
+// //     videoSrc:
+// //       "https://videos.pexels.com/video-files/854380/854380-hd_1920_1080_30fps.mp4",
+// //     title: "Helicopter Shot 💥",
+// //     caption: "Dhoni style magic 😂 #Legend",
+// //     username: "rohitsharma",
+// //     handle: "hitman",
+// //     likes: 125000,
+// //     commentsCount: 8900,
+// //     audio: "Wind + Crowd",
+// //   },
+// //     {
+// //     id: 2,
+// //     videoSrc:
+// //       "https://videos.pexels.com/video-files/854380/854380-hd_1920_1080_30fps.mp4",
+// //     title: "Helicopter Shot 💥",
+// //     caption: "Dhoni style magic 😂 #Legend",
+// //     username: "rohitsharma",
+// //     handle: "hitman",
+// //     likes: 125000,
+// //     commentsCount: 8900,
+// //     audio: "Wind + Crowd",
+// //   },
+// //   {
+// //     id: 3,
+// //     videoSrc:
+// //       "https://videos.pexels.com/video-files/11755921/11755921-uhd_2732_1440_60fps.mp4",
+// //     title: "Night Sixer Under Lights 🌃",
+// //     caption: "Pure fire at night 🔥 #IPL2025",
+// //     username: "msdhoni",
+// //     handle: "captaincool",
+// //     likes: 67800,
+// //     commentsCount: 3400,
+// //     audio: "Night Stadium Roar",
+// //   },
+// //   {
+// //     id: 4,
+// //     videoSrc:
+// //       "https://videos.pexels.com/video-files/854380/854380-hd_1920_1080_30fps.mp4",
+// //     title: "Helicopter Shot 💥",
+// //     caption: "Dhoni style magic 😂 #Legend",
+// //     username: "rohitsharma",
+// //     handle: "hitman",
+// //     likes: 125000,
+// //     commentsCount: 8900,
+// //     audio: "Wind + Crowd",
+// //   },
+// // ];
+
+// // export default function ReelPage() {
+// //   const navigate = useNavigate();
+// //   const videoRefs = useRef([]);
+
+// //   const [currentIndex, setCurrentIndex] = useState(0);
+// //   const [reelsData, setReelsData] = useState(
+// //     dummyReels.map((reel) => ({
+// //       ...reel,
+// //       isLiked: false,
+// //       isDisliked: false,
+// //       likesCount: reel.likes,
+// //       comments: [
+// //         { id: 1, user: "fanboy", text: "Kya shot tha bhai 🔥" },
+// //         { id: 2, user: "cricketfan", text: "GOAT move!" },
+// //       ],
+// //       showCommentInput: false,
+// //       newComment: "",
+// //     }))
+// //   );
+
+// //   const currentReel = reelsData[currentIndex];
+
+// //   /* 🔥 HANDLE SCROLL (REEL CHANGE) */
+// //   const handleScroll = (e) => {
+// //     const scrollTop = e.target.scrollTop;
+// //     const screenHeight = window.innerHeight;
+// //     const index = Math.round(scrollTop / screenHeight);
+// //     setCurrentIndex(index);
+// //   };
+
+// //   /* ▶️ PLAY ACTIVE VIDEO ONLY */
+// //   useEffect(() => {
+// //     videoRefs.current.forEach((video, i) => {
+// //       if (!video) return;
+// //       if (i === currentIndex) {
+// //         video.play().catch(() => {});
+// //       } else {
+// //         video.pause();
+// //         video.currentTime = 0;
+// //       }
+// //     });
+// //   }, [currentIndex]);
+
+// //   const handleLike = () => {
+// //     setReelsData((prev) =>
+// //       prev.map((r, i) =>
+// //         i === currentIndex
+// //           ? {
+// //               ...r,
+// //               isLiked: !r.isLiked,
+// //               isDisliked: false,
+// //               likesCount: r.isLiked
+// //                 ? r.likesCount - 1
+// //                 : r.likesCount + 1,
+// //             }
+// //           : r
+// //       )
+// //     );
+// //   };
+
+// //   const handleDislike = () => {
+// //     setReelsData((prev) =>
+// //       prev.map((r, i) =>
+// //         i === currentIndex
+// //           ? {
+// //               ...r,
+// //               isDisliked: !r.isDisliked,
+// //               isLiked: false,
+// //             }
+// //           : r
+// //       )
+// //     );
+// //   };
+
+// //   const handleCommentSubmit = (e) => {
+// //     e.preventDefault();
+// //     if (!currentReel.newComment.trim()) return;
+
+// //     setReelsData((prev) =>
+// //       prev.map((r, i) =>
+// //         i === currentIndex
+// //           ? {
+// //               ...r,
+// //               comments: [
+// //                 ...r.comments,
+// //                 {
+// //                   id: Date.now(),
+// //                   user: "you",
+// //                   text: r.newComment,
+// //                 },
+// //               ],
+// //               newComment: "",
+// //               showCommentInput: false,
+// //             }
+// //           : r
+// //       )
+// //     );
+// //   };
+
+// //   return (
+// //     <div className="fixed inset-0 bg-black z-50 overflow-hidden">
+// //       {/* ❌ BACK BUTTON */}
+// //       <button
+// //         onClick={() => navigate(-1)}
+// //         className="absolute top-4 left-4 z-20 text-white bg-black/50 p-2 rounded-full"
+// //       >
+// //         <X size={28} />
+// //       </button>
+
+// //       {/* 📱 REELS CONTAINER */}
+// //       <div
+// //         className="h-full snap-y snap-mandatory overflow-y-scroll scrollbar-hide"
+// //         onScroll={handleScroll}
+// //       >
+// //         {reelsData.map((reel, index) => (
+// //           <div
+// //             key={reel.id}
+// //             className="h-screen w-full snap-start flex justify-center items-center"
+// //           >
+// //             <div className="relative w-full max-w-[500px] h-full">
+// //               <video
+// //                 ref={(el) => (videoRefs.current[index] = el)}
+// //                 src={reel.videoSrc}
+// //                 muted
+// //                 loop
+// //                 playsInline
+// //                 className="w-full h-full object-cover"
+// //               />
+
+// //               {/* RIGHT ACTIONS */}
+// //               <div className="absolute right-4 bottom-40 flex flex-col gap-6 text-white">
+// //                 <button onClick={handleLike}>
+// //                   <Heart
+// //                     size={32}
+// //                     className={
+// //                       currentReel?.isLiked && index === currentIndex
+// //                         ? "fill-red-500 text-red-500"
+// //                         : ""
+// //                     }
+// //                   />
+// //                   <p className="text-xs">
+// //                     {(reel.likesCount / 1000).toFixed(1)}K
+// //                   </p>
+// //                 </button>
+
+// //                 <button onClick={handleDislike}>
+// //                   <ThumbsDown size={30} />
+// //                 </button>
+
+// //                 <button
+// //                   onClick={() =>
+// //                     setReelsData((prev) =>
+// //                       prev.map((r, i) =>
+// //                         i === currentIndex
+// //                           ? { ...r, showCommentInput: !r.showCommentInput }
+// //                           : r
+// //                       )
+// //                     )
+// //                   }
+// //                 >
+// //                   <MessageCircle size={32} />
+// //                 </button>
+
+// //                 <Send size={32} />
+// //                 <Bookmark size={32} />
+// //               </div>
+
+// //               {/* BOTTOM INFO */}
+// //               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent text-white">
+// //                 <p className="font-semibold">{reel.username}</p>
+// //                 <p className="text-sm">{reel.caption}</p>
+// //                 <p className="text-xs opacity-70 mt-1">{reel.audio}</p>
+// //               </div>
+
+// //               {/* 💬 COMMENTS */}
+// //               {reel.showCommentInput && index === currentIndex && (
+// //                 <div className="absolute bottom-0 left-0 right-0 bg-black p-4">
+// //                   <div className="max-h-40 overflow-y-auto mb-3">
+// //                     {reel.comments.map((c) => (
+// //                       <div key={c.id} className="mb-2">
+// //                         <p className="text-white text-sm font-semibold">
+// //                           {c.user}
+// //                         </p>
+// //                         <p className="text-gray-300 text-sm">{c.text}</p>
+// //                       </div>
+// //                     ))}
+// //                   </div>
+
+// //                   <form onSubmit={handleCommentSubmit} className="flex gap-2">
+// //                     <input
+// //                       value={reel.newComment}
+// //                       onChange={(e) =>
+// //                         setReelsData((prev) =>
+// //                           prev.map((r, i) =>
+// //                             i === currentIndex
+// //                               ? { ...r, newComment: e.target.value }
+// //                               : r
+// //                           )
+// //                         )
+// //                       }
+// //                       placeholder="Add a comment..."
+// //                       className="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full"
+// //                     />
+// //                     <button className="bg-blue-600 px-4 rounded-full">
+// //                       Post
+// //                     </button>
+// //                   </form>
+// //                 </div>
+// //               )}
+// //             </div>
+// //           </div>
+// //         ))}
+// //       </div>
+// //     </div>
+// //   );
+// // }
+
+
+// import { useState, useRef, useEffect } from "react";
+// import {
+//   Heart,
+//   MessageCircle,
+//   Send,
+//   Bookmark,
+//   X,
+//   ThumbsDown,
+// } from "lucide-react";
+// import { useNavigate } from "react-router-dom";
+
+// const dummyReels = [
+//   {
+//     id: 1,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+//     title: "Amazing Nature 🌿",
+//     caption: "Beautiful scenery captured! #Nature #Vibes",
+//     username: "rohitsharma",
+//     handle: "hitman",
+//     likes: 125000,
+//     commentsCount: 8900,
+//     audio: "Nature Sounds",
+//   },
+//   {
+//     id: 2,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+//     title: "Creative Vibes 🎨",
+//     caption: "Art in motion 🔥 #Creative",
+//     username: "viratkholi",
+//     handle: "kingkohli",
+//     likes: 98000,
+//     commentsCount: 5600,
+//     audio: "Chill Beats",
+//   },
+//   {
+//     id: 3,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+//     title: "Epic Moments 🌟",
+//     caption: "Pure fire at night 🔥 #Epic",
+//     username: "msdhoni",
+//     handle: "captaincool",
+//     likes: 67800,
+//     commentsCount: 3400,
+//     audio: "Stadium Roar",
+//   },
+//   {
+//     id: 4,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+//     title: "Adventure Time 🏔️",
+//     caption: "Travel goals right here! #Adventure #Travel",
+//     username: "traveler_raj",
+//     handle: "wanderlust",
+//     likes: 84000,
+//     commentsCount: 4200,
+//     audio: "Adventure Theme",
+//   },
+//   {
+//     id: 5,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+//     title: "Fun Vibes 🎉",
+//     caption: "Living the moment! #Fun #Enjoy",
+//     username: "party_king",
+//     handle: "funlover",
+//     likes: 72000,
+//     commentsCount: 3900,
+//     audio: "Party Music",
+//   },
+//   {
+//     id: 6,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+//     title: "Speed Thrills 🏎️",
+//     caption: "Life in the fast lane! #Speed #Adrenaline",
+//     username: "speed_demon",
+//     handle: "raceking",
+//     likes: 91000,
+//     commentsCount: 5100,
+//     audio: "Engine Roar",
+//   },
+//   {
+//     id: 7,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+//     title: "Chill Vibes ❄️",
+//     caption: "Cool moments captured! #Chill #Relaxed",
+//     username: "chill_master",
+//     handle: "relaxmode",
+//     likes: 56000,
+//     commentsCount: 2800,
+//     audio: "Lo-fi Beats",
+//   },
+//   {
+//     id: 8,
+//     videoSrc:
+//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+//     title: "Epic Story 🎬",
+//     caption: "Cinema at its finest! #Movies #Epic",
+//     username: "movie_buff",
+//     handle: "cinephile",
+//     likes: 103000,
+//     commentsCount: 6700,
+//     audio: "Epic Score",
+//   },
+// ];
+
+// export default function ReelPage() {
+//   const navigate = useNavigate();
+//   const videoRefs = useRef([]);
+
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [reelsData, setReelsData] = useState(
+//     dummyReels.map((reel) => ({
+//       ...reel,
+//       isLiked: false,
+//       isDisliked: false,
+//       likesCount: reel.likes,
+//       comments: [
+//         { id: 1, user: "fanboy", text: "Kya shot tha bhai 🔥" },
+//         { id: 2, user: "cricketfan", text: "GOAT move!" },
+//       ],
+//       showCommentInput: false,
+//       newComment: "",
+//     }))
+//   );
+
+//   const currentReel = reelsData[currentIndex];
+
+//   /* 🔥 HANDLE SCROLL (REEL CHANGE) */
+//   const handleScroll = (e) => {
+//     const scrollTop = e.target.scrollTop;
+//     const screenHeight = window.innerHeight;
+//     const index = Math.round(scrollTop / screenHeight);
+//     setCurrentIndex(index);
+//   };
+
+//   /* ▶️ PLAY ACTIVE VIDEO ONLY */
+//   useEffect(() => {
+//     videoRefs.current.forEach((video, i) => {
+//       if (!video) return;
+//       if (i === currentIndex) {
+//         video.play().catch(() => {});
+//       } else {
+//         video.pause();
+//         video.currentTime = 0;
+//       }
+//     });
+//   }, [currentIndex]);
+
+//   const handleLike = () => {
+//     setReelsData((prev) =>
+//       prev.map((r, i) =>
+//         i === currentIndex
+//           ? {
+//               ...r,
+//               isLiked: !r.isLiked,
+//               isDisliked: false,
+//               likesCount: r.isLiked
+//                 ? r.likesCount - 1
+//                 : r.likesCount + 1,
+//             }
+//           : r
+//       )
+//     );
+//   };
+
+//   const handleDislike = () => {
+//     setReelsData((prev) =>
+//       prev.map((r, i) =>
+//         i === currentIndex
+//           ? {
+//               ...r,
+//               isDisliked: !r.isDisliked,
+//               isLiked: false,
+//             }
+//           : r
+//       )
+//     );
+//   };
+
+//   const handleCommentSubmit = (e) => {
+//     e.preventDefault();
+//     if (!currentReel.newComment.trim()) return;
+
+//     setReelsData((prev) =>
+//       prev.map((r, i) =>
+//         i === currentIndex
+//           ? {
+//               ...r,
+//               comments: [
+//                 ...r.comments,
+//                 {
+//                   id: Date.now(),
+//                   user: "you",
+//                   text: r.newComment,
+//                 },
+//               ],
+//               newComment: "",
+//               showCommentInput: false,
+//             }
+//           : r
+//       )
+//     );
+//   };
+
+//   return (
+//     <div className="fixed inset-0 bg-black z-50 overflow-hidden">
+//       {/* ❌ BACK BUTTON */}
+//       <button
+//         onClick={() => navigate(-1)}
+//         className="absolute top-4 left-4 z-20 text-white bg-black/50 p-2 rounded-full"
+//       >
+//         <X size={28} />
+//       </button>
+
+//       {/* 📱 REELS CONTAINER */}
+//       <div
+//         className="h-full snap-y snap-mandatory overflow-y-scroll scrollbar-hide"
+//         onScroll={handleScroll}
+//       >
+//         {reelsData.map((reel, index) => (
+//           <div
+//             key={reel.id}
+//             className="h-screen w-full snap-start flex justify-center items-center"
+//           >
+//             <div className="relative w-full max-w-[500px] h-full">
+//               <video
+//                 ref={(el) => (videoRefs.current[index] = el)}
+//                 src={reel.videoSrc}
+//                 muted
+//                 loop
+//                 playsInline
+//                 className="w-full h-full object-cover"
+//               />
+
+//               {/* RIGHT ACTIONS */}
+//               <div className="absolute right-4 bottom-40 flex flex-col gap-6 text-white">
+//                 <button onClick={handleLike}>
+//                   <Heart
+//                     size={32}
+//                     className={
+//                       currentReel?.isLiked && index === currentIndex
+//                         ? "fill-red-500 text-red-500"
+//                         : ""
+//                     }
+//                   />
+//                   <p className="text-xs">
+//                     {(reel.likesCount / 1000).toFixed(1)}K
+//                   </p>
+//                 </button>
+
+//                 <button onClick={handleDislike}>
+//                   <ThumbsDown size={30} />
+//                 </button>
+
+//                 <button
+//                   onClick={() =>
+//                     setReelsData((prev) =>
+//                       prev.map((r, i) =>
+//                         i === currentIndex
+//                           ? { ...r, showCommentInput: !r.showCommentInput }
+//                           : r
+//                       )
+//                     )
+//                   }
+//                 >
+//                   <MessageCircle size={32} />
+//                 </button>
+
+//                 <Send size={32} />
+//                 <Bookmark size={32} />
+//               </div>
+
+//               {/* BOTTOM INFO */}
+//               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent text-white">
+//                 <p className="font-semibold">{reel.username}</p>
+//                 <p className="text-sm">{reel.caption}</p>
+//                 <p className="text-xs opacity-70 mt-1">{reel.audio}</p>
+//               </div>
+
+//               {/* 💬 COMMENTS */}
+//               {reel.showCommentInput && index === currentIndex && (
+//                 <div className="absolute bottom-0 left-0 right-0 bg-black p-4">
+//                   <div className="max-h-40 overflow-y-auto mb-3">
+//                     {reel.comments.map((c) => (
+//                       <div key={c.id} className="mb-2">
+//                         <p className="text-white text-sm font-semibold">
+//                           {c.user}
+//                         </p>
+//                         <p className="text-gray-300 text-sm">{c.text}</p>
+//                       </div>
+//                     ))}
+//                   </div>
+
+//                   <form onSubmit={handleCommentSubmit} className="flex gap-2">
+//                     <input
+//                       value={reel.newComment}
+//                       onChange={(e) =>
+//                         setReelsData((prev) =>
+//                           prev.map((r, i) =>
+//                             i === currentIndex
+//                               ? { ...r, newComment: e.target.value }
+//                               : r
+//                           )
+//                         )
+//                       }
+//                       placeholder="Add a comment..."
+//                       className="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full"
+//                     />
+//                     <button className="bg-blue-600 px-4 rounded-full">
+//                       Post
+//                     </button>
+//                   </form>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+import { useState, useRef, useEffect } from "react";
+import {
+  Heart,
+  MessageCircle,
+  Send,
+  Bookmark,
+  X,
+  ThumbsDown,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
+const dummyReels = [
+  {
+    id: 1,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    title: "Amazing Nature 🌿",
+    caption: "Beautiful scenery captured! #Nature #Vibes",
+    username: "rohitsharma",
+    handle: "hitman",
+    likes: 125000,
+    commentsCount: 8900,
+    audio: "Nature Sounds",
+  },
+  {
+    id: 2,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    title: "Creative Vibes 🎨",
+    caption: "Art in motion 🔥 #Creative",
+    username: "viratkholi",
+    handle: "kingkohli",
+    likes: 98000,
+    commentsCount: 5600,
+    audio: "Chill Beats",
+  },
+  {
+    id: 3,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    title: "Epic Moments 🌟",
+    caption: "Pure fire at night 🔥 #Epic",
+    username: "msdhoni",
+    handle: "captaincool",
+    likes: 67800,
+    commentsCount: 3400,
+    audio: "Stadium Roar",
+  },
+  {
+    id: 4,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    title: "Adventure Time 🏔️",
+    caption: "Travel goals right here! #Adventure #Travel",
+    username: "traveler_raj",
+    handle: "wanderlust",
+    likes: 84000,
+    commentsCount: 4200,
+    audio: "Adventure Theme",
+  },
+  {
+    id: 5,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    title: "Fun Vibes 🎉",
+    caption: "Living the moment! #Fun #Enjoy",
+    username: "party_king",
+    handle: "funlover",
+    likes: 72000,
+    commentsCount: 3900,
+    audio: "Party Music",
+  },
+  {
+    id: 6,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    title: "Speed Thrills 🏎️",
+    caption: "Life in the fast lane! #Speed #Adrenaline",
+    username: "speed_demon",
+    handle: "raceking",
+    likes: 91000,
+    commentsCount: 5100,
+    audio: "Engine Roar",
+  },
+  {
+    id: 7,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    title: "Chill Vibes ❄️",
+    caption: "Cool moments captured! #Chill #Relaxed",
+    username: "chill_master",
+    handle: "relaxmode",
+    likes: 56000,
+    commentsCount: 2800,
+    audio: "Lo-fi Beats",
+  },
+  {
+    id: 8,
+    videoSrc:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    title: "Epic Story 🎬",
+    caption: "Cinema at its finest! #Movies #Epic",
+    username: "movie_buff",
+    handle: "cinephile",
+    likes: 103000,
+    commentsCount: 6700,
+    audio: "Epic Score",
+  },
+];
 
 export default function ReelPage() {
   const navigate = useNavigate();
+  const videoRefs = useRef([]);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [reelsData, setReelsData] = useState(
+    dummyReels.map((reel) => ({
+      ...reel,
+      isLiked: false,
+      isDisliked: false,
+      likesCount: reel.likes,
+      comments: [
+        { id: 1, user: "fanboy", text: "Kya shot tha bhai 🔥" },
+        { id: 2, user: "cricketfan", text: "GOAT move!" },
+      ],
+      showCommentInput: false,
+      newComment: "",
+    }))
+  );
+
+  const currentReel = reelsData[currentIndex];
+
+  /* 🔥 HANDLE SCROLL (REEL CHANGE) */
+  const handleScroll = (e) => {
+    const scrollTop = e.target.scrollTop;
+    const screenHeight = window.innerHeight;
+    const index = Math.round(scrollTop / screenHeight);
+    setCurrentIndex(index);
+  };
+
+  /* ▶️ PLAY ACTIVE VIDEO ONLY */
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+      if (i === currentIndex) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [currentIndex]);
+
+  const handleLike = () => {
+    setReelsData((prev) =>
+      prev.map((r, i) =>
+        i === currentIndex
+          ? {
+              ...r,
+              isLiked: !r.isLiked,
+              isDisliked: false,
+              likesCount: r.isLiked
+                ? r.likesCount - 1
+                : r.likesCount + 1,
+            }
+          : r
+      )
+    );
+  };
+
+  const handleDislike = () => {
+    setReelsData((prev) =>
+      prev.map((r, i) =>
+        i === currentIndex
+          ? {
+              ...r,
+              isDisliked: !r.isDisliked,
+              isLiked: false,
+            }
+          : r
+      )
+    );
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (!currentReel.newComment.trim()) return;
+
+    setReelsData((prev) =>
+      prev.map((r, i) =>
+        i === currentIndex
+          ? {
+              ...r,
+              comments: [
+                ...r.comments,
+                {
+                  id: Date.now(),
+                  user: "you",
+                  text: r.newComment,
+                },
+              ],
+              newComment: "",
+              showCommentInput: false,
+            }
+          : r
+      )
+    );
+  };
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col">
-      {/* Close / Back Button */}
+    <div className="fixed inset-0 bg-black z-50 overflow-hidden">
+      {/* ❌ BACK BUTTON */}
       <button
         onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 z-10 text-white p-2 rounded-full bg-black/40 hover:bg-black/60 transition"
+        className="absolute top-4 left-4 z-20 text-white bg-black/50 p-2 rounded-full"
       >
         <X size={28} />
       </button>
 
-      {/* Main Reel Content - Full screen vertical */}
-      <div className="flex-1 relative flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900">
-        {/* Video Player - Cricket Reel */}
-        <div className="w-full max-w-[500px] aspect-[9/16] relative overflow-hidden rounded-xl shadow-2xl">
-          <video
-            src="https://videos.pexels.com/video-files/854203/854203-hd_1920_1080_30fps.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              console.log("Video load failed, fallback use kar");
-            }}
-          />
+      {/* 📱 REELS CONTAINER */}
+      <div
+        className="h-full snap-y snap-mandatory overflow-y-scroll scrollbar-hide"
+        onScroll={handleScroll}
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {reelsData.map((reel, index) => (
+          <div
+            key={reel.id}
+            className="h-screen w-full snap-start flex justify-center items-center"
+          >
+            <div className="relative w-full max-w-[500px] h-full">
+              <video
+                ref={(el) => (videoRefs.current[index] = el)}
+                src={reel.videoSrc}
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
 
-          {/* Play overlay (hover pe dikhe) */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition">
-            <div className="bg-black/50 rounded-full p-6">
-              <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Top Text - Reel Title */}
-          <div className="absolute top-8 left-0 right-0 text-center px-6">
-            <div className="inline-block bg-black/60 backdrop-blur-md px-6 py-2 rounded-full">
-              <p className="text-white text-xl md:text-2xl font-bold">
-                Sixer on First Ball 🔥
-              </p>
-            </div>
-          </div>
-
-          {/* Funny Labels */}
-          <div className="absolute bottom-32 left-6 right-6 flex justify-between">
-            <div className="bg-black/70 px-5 py-2 rounded-full">
-              <p className="text-white font-bold text-lg">Bowler</p>
-            </div>
-            <div className="bg-black/70 px-5 py-2 rounded-full">
-              <p className="text-white font-bold text-lg">Le: Me 😎</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="bg-gradient-to-t from-black via-black/80 to-transparent pb-20 pt-10 px-4">
-        <div className="max-w-[500px] mx-auto">
-          {/* Username + Follow */}
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 p-[2px]">
-                <div className="w-full h-full rounded-full bg-black p-0.5">
-                  <img
-                    src="https://media.easy-peasy.ai/a43d171a-45ce-45cf-b422-649eecc4ffb4/090134e9-c882-491b-922b-4b50b057f0e6.png"  // Professional confident young Indian man (Virat vibe)
-                    alt="virat.kohli"
-                    className="w-full h-full rounded-full object-cover border border-gray-300"
+              {/* RIGHT ACTIONS */}
+              <div className="absolute right-4 bottom-40 flex flex-col gap-6 text-white">
+                <button onClick={handleLike}>
+                  <Heart
+                    size={32}
+                    className={
+                      currentReel?.isLiked && index === currentIndex
+                        ? "fill-red-500 text-red-500"
+                        : ""
+                    }
                   />
+                  <p className="text-xs">
+                    {(reel.likesCount / 1000).toFixed(1)}K
+                  </p>
+                </button>
+
+                <button onClick={handleDislike}>
+                  <ThumbsDown size={30} />
+                </button>
+
+                <button
+                  onClick={() =>
+                    setReelsData((prev) =>
+                      prev.map((r, i) =>
+                        i === currentIndex
+                          ? { ...r, showCommentInput: !r.showCommentInput }
+                          : r
+                      )
+                    )
+                  }
+                >
+                  <MessageCircle size={32} />
+                </button>
+
+                <Send size={32} />
+                <Bookmark size={32} />
+              </div>
+
+              {/* BOTTOM INFO */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent text-white">
+                <p className="font-semibold">{reel.username}</p>
+                <p className="text-sm">{reel.caption}</p>
+                <p className="text-xs opacity-70 mt-1">{reel.audio}</p>
+              </div>
+
+              {/* 💬 COMMENTS */}
+              {reel.showCommentInput && index === currentIndex && (
+                <div className="absolute bottom-0 left-0 right-0 bg-black p-4">
+                  <div className="max-h-40 overflow-y-auto mb-3">
+                    {reel.comments.map((c) => (
+                      <div key={c.id} className="mb-2">
+                        <p className="text-white text-sm font-semibold">
+                          {c.user}
+                        </p>
+                        <p className="text-gray-300 text-sm">{c.text}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <form onSubmit={handleCommentSubmit} className="flex gap-2">
+                    <input
+                      value={reel.newComment}
+                      onChange={(e) =>
+                        setReelsData((prev) =>
+                          prev.map((r, i) =>
+                            i === currentIndex
+                              ? { ...r, newComment: e.target.value }
+                              : r
+                          )
+                        )
+                      }
+                      placeholder="Add a comment..."
+                      className="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full"
+                    />
+                    <button className="bg-blue-600 px-4 rounded-full">
+                      Post
+                    </button>
+                  </form>
                 </div>
-              </div>
-              <div>
-                <p className="text-white font-semibold">virat.kohli</p>
-                <p className="text-gray-300 text-sm">kingofcricket</p>
-              </div>
+              )}
             </div>
-            <button className="bg-white text-black px-5 py-1.5 rounded-full font-semibold text-sm hover:bg-gray-200 transition">
-              Follow
-            </button>
           </div>
-
-          <p className="text-white text-base mb-6">
-            Yorker ko sixer bana diya 😂🔥 King mode on! #ViratKohli #CricketReels #IPL
-          </p>
-
-          {/* Right Floating Actions */}
-          <div className="absolute right-4 bottom-32 flex flex-col items-center gap-6">
-            <button className="text-white flex flex-col items-center">
-              <Heart size={32} className="mb-1" />
-              <span className="text-sm">45.2K</span>
-            </button>
-
-            <button className="text-white flex flex-col items-center">
-              <MessageCircle size={32} className="mb-1" />
-              <span className="text-sm">1.2K</span>
-            </button>
-
-            <button className="text-white flex flex-col items-center">
-              <Send size={32} className="mb-1 rotate-[-30deg]" />
-              <span className="text-sm">Share</span>
-            </button>
-
-            <button className="text-white flex flex-col items-center">
-              <Bookmark size={32} className="mb-1" />
-              <span className="text-sm">Save</span>
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Audio Indicator */}
-      <div className="absolute bottom-4 left-4 right-4 text-center">
-        <p className="text-white text-sm bg-black/50 inline-block px-4 py-1 rounded-full">
-          Original Audio • Stadium Roar + Bumrah Yorker 😂
-        </p>
-      </div>
+      {/* Hide Scrollbar CSS */}
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 }

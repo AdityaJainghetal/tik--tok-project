@@ -67,7 +67,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<PostCard />} />
           <Route path="/reels" element={<ReelPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage /> } />
         </Route>
       </Routes>
     </BrowserRouter>
