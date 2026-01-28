@@ -4,7 +4,7 @@
 //     "k_k_properties",
 //     "ayushi_bal...",
 //     "pawan_pat...",
-//     "Tik-tok",
+//     "bitzo",
 //     "abhaydi...",
 //     "katre.divy",
 //     "user7",
@@ -33,41 +33,48 @@
 //   );
 // }
 
-
 // src/components/StoriesRow.jsx
 export default function StoriesRow() {
   const stories = [
     {
       username: "k_k_properties",
-      avatar: "https://media.easy-peasy.ai/a43d171a-45ce-45cf-b422-649eecc4ffb4/090134e9-c882-491b-922b-4b50b057f0e6.png",
+      avatar:
+        "https://media.easy-peasy.ai/a43d171a-45ce-45cf-b422-649eecc4ffb4/090134e9-c882-491b-922b-4b50b057f0e6.png",
     },
     {
       username: "ayushi_bal...",
-      avatar: "https://images.pexels.com/photos/15618748/pexels-photo-15618748/free-photo-of-smiling-woman-face.jpeg",
+      avatar:
+        "https://images.pexels.com/photos/15618748/pexels-photo-15618748/free-photo-of-smiling-woman-face.jpeg",
     },
     {
       username: "pawan_pat...",
-      avatar: "https://freerangestock.com/sample/97566/bearded-man-smiling-at-camera.jpg",
+      avatar:
+        "https://freerangestock.com/sample/97566/bearded-man-smiling-at-camera.jpg",
     },
     {
-      username: "Tik-tok",
-      avatar: "https://p1.hippopx.com/preview/589/664/959/indian-boy-spectackles-young.jpg",
+      username: "bitzo",
+      avatar:
+        "https://p1.hippopx.com/preview/589/664/959/indian-boy-spectackles-young.jpg",
     },
     {
       username: "abhaydi...",
-      avatar: "https://p2.piqsels.com/preview/433/855/699/person-boy-handsome-young.jpg",
+      avatar:
+        "https://p2.piqsels.com/preview/433/855/699/person-boy-handsome-young.jpg",
     },
     {
       username: "katre.divy",
-      avatar: "https://media.easy-peasy.ai/045a086d-d6df-40f9-854b-4834fd826df4/adcf461e-8171-4c3a-a256-0e1b15dabaaf.png",
+      avatar:
+        "https://media.easy-peasy.ai/045a086d-d6df-40f9-854b-4834fd826df4/adcf461e-8171-4c3a-a256-0e1b15dabaaf.png",
     },
     {
       username: "user7",
-      avatar: "https://p1.hippopx.com/preview/246/367/614/rishi-gangoly-man-indian-professional-male-thinking.jpg",
+      avatar:
+        "https://p1.hippopx.com/preview/246/367/614/rishi-gangoly-man-indian-professional-male-thinking.jpg",
     },
     {
       username: "user8",
-      avatar: "https://images.pexels.com/photos/20190302/pexels-photo-20190302.jpeg?cs=srgb&dl=pexels-daredevil-20190302.jpg&fm=jpg",
+      avatar:
+        "https://images.pexels.com/photos/20190302/pexels-photo-20190302.jpeg?cs=srgb&dl=pexels-daredevil-20190302.jpg&fm=jpg",
     },
   ];
 
@@ -85,7 +92,9 @@ export default function StoriesRow() {
                 />
               </div>
             </div>
-            <p className="text-xs mt-1 truncate w-16 text-center">{story.username}</p>
+            <p className="text-xs mt-1 truncate w-16 text-center">
+              {story.username}
+            </p>
           </div>
         ))}
       </div>

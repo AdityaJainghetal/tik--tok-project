@@ -23,12 +23,12 @@ function DesktopSidebar() {
       transition-all duration-300
     "
     >
-      {/* Logo / Tik-tok text */}
+      {/* Logo / bitzo text */}
       <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-800">
         <h1 className="hidden lg:block text-2xl font-bold tracking-tight">
-          Tik-tok
+          bitzo
         </h1>
-        <div className="lg:hidden text-3xl  font-black">Tik-tok</div>
+        <div className="lg:hidden text-3xl  font-black">bitzo</div>
       </div>
 
       {/* Navigation Links */}

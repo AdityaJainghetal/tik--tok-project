@@ -338,9 +338,9 @@ export default function PhotoFeed() {
       avatar: "https://i.pravatar.cc/150?u=cricket1",
       time: "45m",
       images: [
-        "https://images.unsplash.com/photo-1622297840892-794f1d92828e?w=1080",  // vertical friendly
-        "https://wallpapercave.com/wp/wp6412315.jpg",
-        "https://c1.wallpaperflare.com/preview/72/871/745/cricket-shot-sport-competition-batsman-cricketer-match.jpg",
+        "https://wallpapercave.com/wp/wp1809677.jpg",  // vertical friendly
+        "https://wallpapercave.com/wp/wp13328925.jpg",
+        "https://wallpapercave.com/wp/wp13328925.jpg",
       ],
       likes: "1.8M",
       comments: 12453,

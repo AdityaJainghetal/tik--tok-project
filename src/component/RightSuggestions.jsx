@@ -84,46 +84,51 @@
 //           <span>Privacy</span> • <span>Terms</span> • <span>Locations</span> •{" "}
 //           <span>Language</span>
 //         </div>
-//         <p className="mt-4">© 2026 Tik-tok FROM META</p>
+//         <p className="mt-4">© 2026 bitzo FROM META</p>
 //       </div>
 //     </aside>
 //   );
 // }
-
 
 // src/components/RightSuggestions.jsx
 export default function RightSuggestions() {
   const currentUser = {
     username: "aadi",
     fullName: "Aditya Jain",
-    avatar: "https://media.easy-peasy.ai/fb97cb03-6b72-4b00-ac27-f2c1ecd44e98/6b08a27f-eaf9-4524-82dc-aec4f2126161.png", // Ultra-realistic young Indian man (clean front-facing portrait)
+    avatar:
+      "https://media.easy-peasy.ai/fb97cb03-6b72-4b00-ac27-f2c1ecd44e98/6b08a27f-eaf9-4524-82dc-aec4f2126161.png", // Ultra-realistic young Indian man (clean front-facing portrait)
   };
 
   const suggestions = [
     {
       username: "shivamguptaa",
       desc: "Shivam Gupta • Suggested for you",
-      avatar: "https://p1.hippopx.com/preview/990/336/955/rishi-gangoly-man-indian-professional-male-thinking.jpg", // Professional Indian man thinking pose
+      avatar:
+        "https://p1.hippopx.com/preview/990/336/955/rishi-gangoly-man-indian-professional-male-thinking.jpg", // Professional Indian man thinking pose
     },
     {
       username: "vin_diesel",
       desc: "Vin Diesel • Followed by mohinish...",
-      avatar: "https://images.pexels.com/photos/4307713/pexels-photo-4307713.jpeg", // Cheerful Indian man smiling
+      avatar:
+        "https://images.pexels.com/photos/4307713/pexels-photo-4307713.jpeg", // Cheerful Indian man smiling
     },
     {
       username: "akanshajain",
       desc: "Akansha Jain • Followed by apoorvajain44",
-      avatar: "https://images.pexels.com/photos/2362887/pexels-photo-2362887.jpeg", // Smiling woman portrait
+      avatar:
+        "https://images.pexels.com/photos/2362887/pexels-photo-2362887.jpeg", // Smiling woman portrait
     },
     {
       username: "reena_kurrey",
       desc: "REENA KURREY • Followed by 513radha",
-      avatar: "https://media.easy-peasy.ai/045a086d-d6df-40f9-854b-4834fd826df4/adcf461e-8171-4c3a-a256-0e1b15dabaaf.png", // Elegant young woman (modern-traditional mix)
+      avatar:
+        "https://media.easy-peasy.ai/045a086d-d6df-40f9-854b-4834fd826df4/adcf461e-8171-4c3a-a256-0e1b15dabaaf.png", // Elegant young woman (modern-traditional mix)
     },
     {
       username: "er_abhishek",
       desc: "Er Abhishek Sonkar • Suggested for you",
-      avatar: "https://images.pexels.com/photos/981104/pexels-photo-981104.jpeg", // Young man smiling outdoors
+      avatar:
+        "https://images.pexels.com/photos/981104/pexels-photo-981104.jpeg", // Young man smiling outdoors
     },
   ];
 
@@ -193,7 +198,7 @@ export default function RightSuggestions() {
           <span>Privacy</span> • <span>Terms</span> • <span>Locations</span> •{" "}
           <span>Language</span>
         </div>
-        <p className="mt-4">© 2026 Tik-tok FROM META</p>
+        <p className="mt-4">© 2026 bitzo FROM META</p>
       </div>
     </aside>
   );
